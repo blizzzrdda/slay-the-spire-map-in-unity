@@ -12,6 +12,8 @@ namespace ProceduralMapNodeSystem
         public string bossNodeName;
         public string configName; // similar to the act name in Slay the Spire
 
+        public NodeType BossNodeType;
+
         public Map(string configName, string bossNodeName, List<Node> nodes, List<Vector2Int> path)
         {
             this.configName = configName;
@@ -22,7 +24,7 @@ namespace ProceduralMapNodeSystem
 
         public Node GetBossNode()
         {
-            return nodes.FirstOrDefault(n => n.nodeType == NodeType.Boss);
+            return nodes.FirstOrDefault(n => n.nodeType == BossNodeType);
         }
 
         public float DistanceBetweenFirstAndLastLayers()

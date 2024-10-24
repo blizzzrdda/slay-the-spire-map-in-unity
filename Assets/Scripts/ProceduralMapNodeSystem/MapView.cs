@@ -56,6 +56,8 @@ namespace ProceduralMapNodeSystem
         public readonly List<MapNode> MapNodes = new List<MapNode>();
         protected readonly List<LineConnection> lineConnections = new List<LineConnection>();
 
+        public NodeType BossNodeType;
+
         public static MapView Instance;
 
         public Map Map { get; protected set; }
@@ -110,7 +112,7 @@ namespace ProceduralMapNodeSystem
 
             GameObject backgroundObject = new GameObject("Background");
             backgroundObject.transform.SetParent(mapParent.transform);
-            MapNode bossNode = MapNodes.FirstOrDefault(node => node.Node.nodeType == NodeType.Boss);
+            MapNode bossNode = MapNodes.FirstOrDefault(node => node.Node.nodeType == BossNodeType);
             float span = m.DistanceBetweenFirstAndLastLayers();
             backgroundObject.transform.localPosition = new Vector3(bossNode.transform.localPosition.x, span / 2f, 0f);
             backgroundObject.transform.localRotation = Quaternion.identity;
@@ -225,7 +227,7 @@ namespace ProceduralMapNodeSystem
         {
             ScrollNonUI scrollNonUi = mapParent.GetComponent<ScrollNonUI>();
             float span = mapManager.CurrentMap.DistanceBetweenFirstAndLastLayers();
-            MapNode bossNode = MapNodes.FirstOrDefault(node => node.Node.nodeType == NodeType.Boss);
+            MapNode bossNode = MapNodes.FirstOrDefault(node => node.Node.nodeType == BossNodeType);
             Debug.Log("Map span in set orientation: " + span + " camera aspect: " + cam.aspect);
 
             // setting first parent to be right in front of the camera first:

@@ -66,25 +66,25 @@ namespace ProceduralMapNodeSystem
             // load appropriate scene with context based on nodeType:
             // or show appropriate GUI over the map: 
             // if you choose to show GUI in some of these cases, do not forget to set "Locked" in MapPlayerTracker back to false
-            switch (mapNode.Node.nodeType)
-            {
-                case NodeType.MinorEnemy:
-                    break;
-                case NodeType.EliteEnemy:
-                    break;
-                case NodeType.RestSite:
-                    break;
-                case NodeType.Treasure:
-                    break;
-                case NodeType.Store:
-                    break;
-                case NodeType.Boss:
-                    break;
-                case NodeType.Mystery:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            // switch (mapNode.Node.nodeType)
+            // {
+            //     case NodeType.MinorEnemy:
+            //         break;
+            //     case NodeType.EliteEnemy:
+            //         break;
+            //     case NodeType.RestSite:
+            //         break;
+            //     case NodeType.Treasure:
+            //         break;
+            //     case NodeType.Store:
+            //         break;
+            //     case NodeType.Boss:
+            //         break;
+            //     case NodeType.Mystery:
+            //         break;
+            //     default:
+            //         throw new ArgumentOutOfRangeException();
+            // }
         }
 
         private void PlayWarningThatNodeCannotBeAccessed()

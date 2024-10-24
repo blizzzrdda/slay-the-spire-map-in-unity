@@ -40,7 +40,7 @@ namespace ProceduralMapNodeSystem
             List<Node> nodesList = nodes.SelectMany(n => n).Where(n => n.incoming.Count > 0 || n.outgoing.Count > 0).ToList();
 
             // pick a random name of the boss level for this map:
-            string bossNodeName = config.nodeBlueprints.Where(b => b.nodeType == NodeType.Boss).ToList().Random().name;
+            string bossNodeName = config.nodeBlueprints.Where(b => b.nodeType?.TypeName == "Boss").ToList().Random().name;
             return new Map(conf.name, bossNodeName, nodesList, new List<Vector2Int>());
         }
 

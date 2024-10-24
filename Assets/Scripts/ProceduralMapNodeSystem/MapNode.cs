@@ -36,7 +36,7 @@ namespace ProceduralMapNodeSystem
             Blueprint = blueprint;
             if (sr != null) sr.sprite = blueprint.sprite;
             if (image != null) image.sprite = blueprint.sprite;
-            if (node.nodeType == NodeType.Boss) transform.localScale *= 1.5f;
+            transform.localScale *= node.nodeType.MapNodeScale;
             if (sr != null) initialScale = sr.transform.localScale.x;
             if (image != null) initialScale = image.transform.localScale.x;
 
